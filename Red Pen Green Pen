@@ -1,0 +1,24 @@
+class UserMainCode {
+
+    public int countSwitches(int input1, int[] input2) {
+        
+        int switches = 0;
+        boolean lastWasGreen = false; // Track previous pen color
+
+        for (int i = 0; i < input1; i++) {
+            int num = input2[i];
+
+            if (num % 2 == 0) {
+                // current pen is red
+                if (lastWasGreen) {
+                    switches++; // green -> red switch
+                }
+                lastWasGreen = false;
+            } else {
+                // current pen is green
+                lastWasGreen = true;
+            }
+        }
+        return switches;
+    }
+}
