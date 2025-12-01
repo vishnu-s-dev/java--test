@@ -1,0 +1,23 @@
+class UserMainCode {
+
+    public int maxBalloons(int input1, int input2, int[] input3, int[] input4) {
+        
+        int maxBalloons = 0;
+
+        for (int i = 0; i < input1; i++) {
+            for (int j = i + 1; j < input1; j++) {
+
+                int totalCost = input4[i] + input4[j];
+
+                if (totalCost <= input2) {
+                    int balloons = input3[i] + input3[j];
+                    if (balloons > maxBalloons) {
+                        maxBalloons = balloons;
+                    }
+                }
+            }
+        }
+
+        return maxBalloons;
+    }
+}
