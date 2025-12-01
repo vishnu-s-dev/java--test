@@ -1,0 +1,23 @@
+class UserMainCode {
+
+    public int maxBooks(int[] A, int N, int size) {
+
+        // Step 1: Sort the book reading times
+        java.util.Arrays.sort(A);
+
+        int totalTime = 0;
+        int count = 0;
+
+        // Step 2: Count how many books we can read within N hours
+        for (int i = 0; i < size; i++) {
+            if (totalTime + A[i] <= N) {
+                totalTime += A[i];
+                count++;
+            } else {
+                break;
+            }
+        }
+
+        return count;
+    }
+}
