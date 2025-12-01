@@ -1,0 +1,22 @@
+class UserMainCode {
+
+    public int shootAndcount(int N, int K, int[] A) {
+
+        int count = 0;
+
+        for (int i = 0; i < N; i++) {
+
+            // Hit if greater than K
+            if (A[i] > K) {
+                A[i] -= K;
+            }
+
+            // Count if still greater than K
+            if (A[i] > K) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+}
