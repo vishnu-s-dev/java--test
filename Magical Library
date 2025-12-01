@@ -1,0 +1,25 @@
+class UserMainCode {
+
+    public int countMagicalRows(int rows, int cols, int[][] arr) {
+
+        int magicalCount = 0;
+
+        for (int i = 0; i < rows; i++) {
+            int sumOdd = 0;
+
+            // Check each number in the row
+            for (int j = 0; j < cols; j++) {
+                if (arr[i][j] % 2 != 0) { // odd number condition
+                    sumOdd += arr[i][j];
+                }
+            }
+
+            // Check if odd sum is even → magical row
+            if (sumOdd % 2 == 0) {
+                magicalCount++;
+            }
+        }
+
+        return magicalCount;
+    }
+}
