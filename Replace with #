@@ -1,0 +1,37 @@
+class UserMainCode {
+
+    public String collapseRepeatsToHash(String input1) {
+
+        String s = input1;
+        StringBuilder sb = new StringBuilder();
+
+        int n = s.length();
+        int i = 0;
+
+        while (i < n) {
+
+            char current = s.charAt(i);
+            int count = 1;
+
+            // count how many times the current character repeats consecutively
+            while (i + count < n && s.charAt(i + count) == current) {
+                count++;
+            }
+
+            // If repeated 2 or more times → add '#'
+            if (count >= 2) {
+                // Avoid consecutive '#' in the result
+                if (sb.length() == 0 || sb.charAt(sb.length() - 1) != '#') {
+                    sb.append('#');
+                }
+            } else {
+                sb.append(current);
+            }
+
+            // move to the next new character
+            i += count;
+        }
+
+        return sb.toString();
+    }
+}
