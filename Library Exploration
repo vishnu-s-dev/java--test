@@ -1,0 +1,24 @@
+import java.util.*;
+
+class UserMainCode {
+
+    public int maxBooks(int N, int K, int[] A) {
+        int total = 0;
+
+        for(int i = 1; i <= N; i++){
+            if(isPrime(i)){  // Check if shelf index is prime
+                total += Math.min(A[i-1], K); // Pick upto K books
+            }
+        }
+        return total;
+    }
+
+    // Function to check if a number is prime
+    private boolean isPrime(int num){
+        if(num <= 1) return false;
+        for(int i = 2; i * i <= num; i++){
+            if(num % i == 0) return false;
+        }
+        return true;
+    }
+}
