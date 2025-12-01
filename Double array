@@ -1,0 +1,20 @@
+class UserMainCode {
+    public int[] doubleArray(int[] input1, int input2) {
+
+        // Step 1: Create a result array with double size
+        int[] result = new int[input2 * 2];
+
+        // Step 2: Copy the original array first time
+        for(int i = 0; i < input2; i++) {
+            result[i] = input1[i];
+        }
+
+        // Step 3: Copy the original array second time
+        for(int i = 0; i < input2; i++) {
+            result[input2 + i] = input1[i];
+        }
+
+        // Step 4: Return final array
+        return result;
+    }
+}
