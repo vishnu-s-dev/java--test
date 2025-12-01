@@ -1,0 +1,31 @@
+class UserMainCode {
+    public int findresult(int N, int[] A) {
+        int count = 0;
+
+        for (int i = 0; i < N; i++) {
+
+            int leftStronger = 0;
+            int rightStronger = 0;
+
+            // count left stronger
+            for (int left = 0; left < i; left++) {
+                if (A[left] > A[i]) {
+                    leftStronger++;
+                }
+            }
+
+            // count right stronger
+            for (int right = i + 1; right < N; right++) {
+                if (A[right] > A[i]) {
+                    rightStronger++;
+                }
+            }
+
+            if (leftStronger > rightStronger) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+}
