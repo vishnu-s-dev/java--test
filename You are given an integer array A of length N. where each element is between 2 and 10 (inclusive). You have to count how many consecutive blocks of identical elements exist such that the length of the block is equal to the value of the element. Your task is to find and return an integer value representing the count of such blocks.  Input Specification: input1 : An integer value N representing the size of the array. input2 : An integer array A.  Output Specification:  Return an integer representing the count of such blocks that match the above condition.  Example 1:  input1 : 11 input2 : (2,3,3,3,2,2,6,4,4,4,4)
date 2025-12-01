@@ -1,0 +1,27 @@
+class UserMainCode {
+
+    public int findresult(int input1, int[] input2) {
+
+        int count = 0;
+        int i = 0;
+
+        while (i < input1) {
+
+            int val = input2[i];
+            int length = 0;
+
+            // count the block length
+            while (i < input1 && input2[i] == val) {
+                length++;
+                i++;
+            }
+
+            // check if block is valid
+            if (length == val) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+}
