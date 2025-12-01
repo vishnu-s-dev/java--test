@@ -1,0 +1,21 @@
+class UserMainCode {
+
+    public int addDigits(int input1) {
+        
+        // Repeat until the number becomes a single digit
+        while (input1 > 9) { // while number is not a single digit
+            int sum = 0;
+            
+            // Add digits of number
+            while (input1 > 0) {
+                sum += input1 % 10; // extract last digit
+                input1 /= 10;       // remove last digit
+            }
+            
+            // Update number with the sum of digits
+            input1 = sum;
+        }
+        
+        return input1; // return single digit result
+    }
+}
