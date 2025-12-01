@@ -1,0 +1,21 @@
+class UserMainCode {
+
+    public int houseVisit(int N, int[] A) {
+
+        int count = 1; // Count the first house
+        int current = 1; // Start from house index 1
+
+        while (true) {
+            int next = current + A[current - 1]; // Jump to next house
+
+            if (next > N) { // Out of boundary
+                break;
+            }
+
+            count++;
+            current = next;
+        }
+
+        return count;
+    }
+}
